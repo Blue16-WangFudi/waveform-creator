@@ -1,93 +1,223 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_color"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textSize="24sp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"/>
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <TextView
-        android:id="@+id/label_waveform"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="波形"
-        android:layout_below="@id/title"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"/>
+        <!-- 标题区域 -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/primary_color">
 
-    <Spinner
-        android:id="@+id/spinner_waveform"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/label_waveform"
-        android:layout_alignBaseline="@id/label_waveform"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:gravity="center">
 
-    <TextView
-        android:id="@+id/label_frequency"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="频率 (Hz)"
-        android:layout_below="@id/label_waveform"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"/>
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="12dp"
+                    android:src="@drawable/ic_waveform"
+                    android:contentDescription="波形图标"
+                    app:tint="@color/white" />
 
-    <EditText
-        android:id="@+id/edit_frequency"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:layout_toEndOf="@id/label_frequency"
-        android:layout_alignBaseline="@id/label_frequency"/>
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_title"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-medium" />
 
-    <TextView
-        android:id="@+id/label_amplitude"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="峰峰值 (mV)"
-        android:layout_below="@id/label_frequency"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/app_subtitle"
+                    android:textColor="@color/white_alpha_70"
+                    android:textSize="14sp" />
 
-    <EditText
-        android:id="@+id/edit_amplitude"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:layout_toEndOf="@id/label_amplitude"
-        android:layout_alignBaseline="@id/label_amplitude"/>
+            </LinearLayout>
 
-    <TextView
-        android:id="@+id/label_phase"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="相位 (deg)"
-        android:layout_below="@id/label_amplitude"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"/>
+        </com.google.android.material.card.MaterialCardView>
 
-    <EditText
-        android:id="@+id/edit_phase"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:layout_toEndOf="@id/label_phase"
-        android:layout_alignBaseline="@id/label_phase"/>
+        <!-- 连接状态指示器 -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_connection_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/divider_color">
 
-    <Button
-        android:id="@+id/btn_send"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="下发数据"
-        android:layout_below="@id/label_phase"
-        android:layout_marginTop="16dp"
-        android:layout_centerHorizontal="true"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:gravity="center_vertical">
 
-</RelativeLayout>
+                <ImageView
+                    android:id="@+id/iv_connection_status"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_bluetooth_disabled"
+                    app:tint="@color/error_color" />
+
+                <TextView
+                    android:id="@+id/tv_connection_status"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:text="@string/status_disconnected"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif-medium" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 波形参数设置卡片 -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/divider_color">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/waveform_parameters"
+                    android:textColor="@color/text_primary"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="sans-serif-medium" />
+
+                <!-- 波形类型选择 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/waveform_type"
+                    style="@style/DropdownStyle">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/spinner_waveform"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"
+                        android:focusable="false" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- 频率输入 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/frequency_hz"
+                    style="@style/InputFieldStyle">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_frequency"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- 幅度输入 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/amplitude_mv"
+                    style="@style/InputFieldStyle">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_amplitude"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- 相位输入 -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/phase_degree"
+                    style="@style/InputFieldStyle">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_phase"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 操作按钮 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="16dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_send"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/send_parameters"
+                android:drawableStart="@drawable/ic_send"
+                android:drawablePadding="8dp"
+                style="@style/PrimaryButtonStyle" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_connect"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/connect"
+                android:drawableStart="@drawable/ic_bluetooth"
+                android:drawablePadding="8dp"
+                style="@style/SecondaryButtonStyle" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

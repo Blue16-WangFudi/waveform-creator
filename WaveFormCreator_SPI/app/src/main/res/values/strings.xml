@@ -1,8 +1,53 @@
 <resources>
+    <!-- 应用名称 -->
     <string name="app_name">WaveFormCreator_SPI</string>
+    <string name="app_title">函数信号发生器</string>
+    <string name="app_subtitle">STM32 蓝牙控制系统</string>
+    
+    <!-- 波形类型 -->
     <string-array name="waveforms_array">
         <item>正弦波</item>
         <item>三角波</item>
         <item>方波</item>
     </string-array>
+    
+    <!-- 界面标签 -->
+    <string name="waveform_parameters">波形参数设置</string>
+    <string name="waveform_type">波形类型</string>
+    <string name="frequency_hz">频率 (Hz)</string>
+    <string name="amplitude_mv">幅度 (mV)</string>
+    <string name="phase_degree">相位 (°)</string>
+    
+    <!-- 输入提示 -->
+    <string name="frequency_range">范围: 1 - 1000000 Hz</string>
+    <string name="amplitude_range">范围: 1 - 3300 mV</string>
+    <string name="phase_range">范围: 0 - 360°</string>
+    
+    <!-- 按钮文本 -->
+    <string name="send_data">发送参数</string>
+    <string name="send_parameters">发送参数</string>
+    <string name="connect">连接设备</string>
+    <string name="disconnect">断开连接</string>
+    
+    <!-- 连接状态 -->
+    <string name="status_connected">设备已连接</string>
+    <string name="status_disconnected">设备未连接</string>
+    <string name="status_connecting">正在连接...</string>
+    
+    <!-- 提示信息 -->
+    <string name="bluetooth_not_supported">此设备不支持蓝牙</string>
+    <string name="bluetooth_permission_denied">未授予蓝牙权限</string>
+    <string name="device_not_found">未找到函数信号发生器</string>
+    <string name="connection_success">函数信号发生器连接成功</string>
+    <string name="connection_failed">函数信号发生器连接失败</string>
+    <string name="data_send_success">参数发送成功</string>
+    <string name="data_send_failed">参数发送失败</string>
+    <string name="waiting_connection">等待设备连接...</string>
+    <string name="sending_data">正在发送参数...</string>
+    
+    <!-- 输入验证 -->
+    <string name="invalid_frequency">请输入有效的频率值</string>
+    <string name="invalid_amplitude">请输入有效的幅度值</string>
+    <string name="invalid_phase">请输入有效的相位值</string>
+    <string name="please_select_waveform">请选择波形类型</string>
 </resources>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <!-- 标题样式 -->
+    <style name="TitleTextStyle">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/on_surface_color</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+    
+    <!-- 副标题样式 -->
+    <style name="SubtitleTextStyle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/on_surface_variant</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginBottom">16dp</item>
+    </style>
+    
+    <!-- 参数标签样式 -->
+    <style name="ParameterLabelStyle">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/on_surface_color</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginBottom">4dp</item>
+    </style>
+    
+    <!-- 连接状态文本样式 -->
+    <style name="ConnectionStatusStyle">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginStart">8dp</item>
+    </style>
+    
+    <!-- 卡片样式 -->
+    <style name="CardStyle">
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:background">@drawable/card_background</item>
+        <item name="android:elevation">4dp</item>
+    </style>
+    
+    <!-- 主按钮样式 -->
+    <style name="PrimaryButtonStyle" parent="Widget.Material3.Button">
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="backgroundTint">@color/primary_color</item>
+        <item name="android:textColor">@color/on_primary_color</item>
+        <item name="cornerRadius">8dp</item>
+    </style>
+    
+    <!-- 次要按钮样式 -->
+    <style name="SecondaryButtonStyle" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/primary_color</item>
+        <item name="strokeColor">@color/primary_color</item>
+        <item name="cornerRadius">8dp</item>
+    </style>
+    
+    <!-- 输入框样式 -->
+    <style name="InputFieldStyle" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="boxStrokeColor">@color/primary_color</item>
+        <item name="hintTextColor">@color/on_surface_variant</item>
+    </style>
+    
+    <!-- 下拉框样式 -->
+    <style name="DropdownStyle" parent="Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="boxStrokeColor">@color/primary_color</item>
+        <item name="hintTextColor">@color/on_surface_variant</item>
+    </style>
+    
+</resources>
