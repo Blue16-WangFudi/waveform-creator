@@ -7,9 +7,9 @@ Waveform Creator is a function signal generator built around an STM32F103 MCU an
 - Proteus project for simulation and quick validation.
 
 ## Repository Layout
-- `WaveFormCreator/`: STM32F103 firmware (CubeMX + HAL, AD9833 driver).
-- `WaveFormCreator_SPI/`: Android app (Bluetooth SPP controller).
-- `stm32f103c8t6/`: Proteus simulation project.
+- `firmware-stm32f103/`: STM32F103 firmware (CubeMX + HAL, AD9833 driver).
+- `android-app/`: Android app (Bluetooth SPP controller).
+- `proteus-simulation/`: Proteus simulation project.
 
 ## Requirements
 - STM32F103C8T6 (Blue Pill) and AD9833 module.
@@ -18,12 +18,12 @@ Waveform Creator is a function signal generator built around an STM32F103 MCU an
 
 ## Installation
 ### Firmware
-1. Open `WaveFormCreator/WaveFormCreator.ioc` in STM32CubeMX and generate code if needed.
+1. Open `firmware-stm32f103/WaveFormCreator.ioc` in STM32CubeMX and generate code if needed.
 2. Build the project with STM32CubeIDE, CLion + CMake, or your preferred ARM GCC toolchain.
 3. Flash the firmware to the STM32F103C8T6.
 
 ### Android App
-1. Open `WaveFormCreator_SPI/` in Android Studio.
+1. Open `android-app/` in Android Studio.
 2. Sync Gradle and run the app on a device with Bluetooth.
 
 ## Usage
