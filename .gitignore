@@ -1,5 +1,6 @@
 # IDE
 **/.idea/
+**/.vscode/
 *.iml
 
 # CMake
@@ -9,9 +10,36 @@
 **/cmake_install.cmake
 **/Makefile
 
+# STM32CubeIDE / Eclipse
+**/.settings/
+**/.project
+**/.cproject
+**/*.launch
+**/.metadata/
+**/Debug/
+**/Release/
+
+# Firmware outputs
+*.elf
+*.hex
+*.bin
+*.map
+*.lst
+
+# Proteus
+**/*.workspace
+**/Project Backups/
+
 # Gradle
 **/.gradle/
 **/build/
+**/local.properties
+**/.externalNativeBuild/
+**/.cxx/
+**/captures/
+*.apk
+*.aab
+*.keystore
 
 # OS
 .DS_Store
