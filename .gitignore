@@ -1,0 +1,18 @@
+# IDE
+**/.idea/
+*.iml
+
+# CMake
+**/cmake-build-*/
+**/CMakeFiles/
+**/CMakeCache.txt
+**/cmake_install.cmake
+**/Makefile
+
+# Gradle
+**/.gradle/
+**/build/
+
+# OS
+.DS_Store
+Thumbs.db
